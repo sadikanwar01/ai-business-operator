@@ -1,0 +1,12 @@
+{
+  "hosting": { "site": "ai-business-operator-sadik",
+    "public": "firebase-public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "run": { "serviceId": "ai-business-operator", "region": "asia-south1" }
+      }
+    ]
+  }
+}
