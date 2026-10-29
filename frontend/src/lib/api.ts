@@ -44,6 +44,7 @@ type RequestOptions = {
   signal?: AbortSignal
 }
 
+const API_BASE = import.meta.env.VITE_API_URL ?? ""
 export async function apiFetch<T>(path: string, options: RequestOptions = {}): Promise<T> {
   const token = getToken()
   const headers: Record<string, string> = { Accept: 'application/json' }
@@ -52,7 +53,7 @@ export async function apiFetch<T>(path: string, options: RequestOptions = {}): P
 
   let response: Response
   try {
-    response = await fetch(path, {
+    response = await fetch(API_BASE + path, {
       method: options.method ?? 'GET',
       headers,
       body: options.body !== undefined ? JSON.stringify(options.body) : undefined,

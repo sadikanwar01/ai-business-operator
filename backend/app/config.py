@@ -51,7 +51,7 @@ class Settings(BaseSettings):
     # scripted workflow so the UI can breathe between steps.
     demo_step_delay: float = 1.1
     token_ttl_days: int = 30
-    cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173"
+    cors_origins: str = "http://localhost:5173,http://127.0.0.1:5173,https://ai-business-operator-sadik.web.app"
 
     @property
     def nebius_configured(self) -> bool:
