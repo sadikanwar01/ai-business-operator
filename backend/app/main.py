@@ -70,7 +70,7 @@ async def on_startup() -> None:
     init_db()
     ensure_demo_workspace()
     try:
-        await seed_demo_missions()
+        pass # disabled on cloud
     except Exception as exc:  # pragma: no cover - seeding must never block boot
         logger.warning("Demo seeding failed: %s", exc)
     logger.info("AI Business Operator API ready (%s)", provider_status())
